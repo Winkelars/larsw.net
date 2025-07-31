@@ -1,5 +1,10 @@
 export function Welcome() {
   return (
+    <>
+    <p><br />W I P - Work In Progress!</p>
+    <p><br />Vielen Dank für den Besuch - Aber leider ist diese Seite noch im Aufbau.</p>
+    <p>Versuchen Sie es bitte in wenigen Tagen erneut.</p>
+    <p><br />Die AboutMe-Page werde ich voraussichtlich zum 05.07.2025 fertigstellen</p>
     <main className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <nav className="p-3 w-screen">
         <ol className="flex justify-around items-center">
@@ -35,5 +40,6 @@ export function Welcome() {
         </ol>
       </nav>
     </main>
+    </>
   );
 }
