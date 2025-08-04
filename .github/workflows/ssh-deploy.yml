@@ -1,5 +1,5 @@
-name: Per SSH im VPS einloggen und eine Datei erstellen
-run-name: ${{ github.actor }} testet stuff
+name: Automatisches SSH Deployment
+run-name: Deployment durch Github Actor ${{ github.actor }}
 on:
   push:
     branches: [ main ]
@@ -16,11 +16,14 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
 
-      - name: Copy Files to VPS
+      - name: Bring Deployment-Repoinstanz Up To Date
         run: |
-          scp -o StrictHostKeyChecking=no -r . ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_DOCKER_DIR }}
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+          cd ${{ secrets.VPS_DOCKER_DIR }}
+          git checkout main
+          git pull
       
-      - name: Rebuild & Restart Docker Container
+      - name: Baue Container 'larsw-homepage' neu und starte ihn
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
           cd ${{ secrets.VPS_DOCKER_DIR }}
