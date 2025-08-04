@@ -24,8 +24,8 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
           cd ${{ secrets.VPS_DOCKER_DIR }}
-          docker build -t larsw-homepage .
+          docker build -t larsw-homepage-image .
           docker stop larsw-homepage || true
           docker rm larsw-homepage || true
-          docker run -d --name larsw-homepage -p 3000:3000 larsw-homepage
+          docker run -d --name larsw-homepage -p 3000:3000 larsw-homepage-image
           EOF
