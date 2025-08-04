@@ -1,7 +1,7 @@
 export function Welcome() {
   return (
     <>
-    <p><br />W I P -- Work In Progress!</p>
+    <p><br />W I P --- Work In Progress!</p>
     <p><br />Vielen Dank für den Besuch - Aber leider ist diese Seite noch im Aufbau.</p>
     <p>Versuchen Sie es bitte in wenigen Tagen erneut.</p>
     <p><br />Die AboutMe-Page werde ich voraussichtlich zum 05.07.2025 fertigstellen</p>
