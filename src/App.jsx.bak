@@ -1,0 +1,48 @@
+import './App.css'
+
+const menuItemTWClasses = "px-[9vw] sm:px-[9vw] md:px-[13vw] py-[39vh] bg-red-500 flex flex-col items-center not-hover:opacity-40 cursor-pointer animate-spring"
+
+function App() {
+  return (
+    <>
+      <main className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <nav className="p-3 w-screen">
+          <ul className="flex justify-around items-center">
+            {/* Jedes Element bekommt eine eigene Animationsverzögerung */}
+              <li className={menuItemTWClasses}
+                  style={{ animationDelay: '0.1s' }}>
+                  <a href="#About_me" className="text-6xl">👨‍💻</a>
+                  <a href="#About_me" className="text-xl">About Me</a>
+              </li>
+            
+              <li className={menuItemTWClasses}
+                  style={{ animationDelay: '0.25s' }}>
+                  <a href="#Projekte" className="text-6xl">💻</a>
+                  <a href="#Projekte" className="text-xl">Projekte</a>
+                  <ul>
+                    <li><a href="#0" className="hidden">Work In Progress..</a></li>
+                    <li><a href="#0" className="hidden">Work In Progress..</a></li>
+                    <li><a href="#0" className="hidden">Work In Progress..</a></li>
+                  </ul>
+              </li>
+            
+              <li className={menuItemTWClasses}
+                  style={{ animationDelay: '0.40s' }}>
+                  <a href="#Kontakt" className="text-6xl">📧</a>
+                  <a href="#Kontakt" className="text-xl">Kontakt</a>
+                  <ol>
+                    <li><a href="#0" className="hidden">E-Mail</a></li>
+                    <li><a href="#0" className="hidden">Mobil</a></li>
+                    <li><a href="#0" className="hidden">Linkedin</a></li>
+                    <li><a href="#0" className="hidden">GitHub</a></li>
+                  </ol>
+              </li>
+          </ul>
+        </nav>
+      </main>
+    </>
+  )
+}
+
+
+export default App
